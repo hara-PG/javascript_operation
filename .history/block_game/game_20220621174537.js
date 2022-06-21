@@ -43,7 +43,7 @@ function draw() {
   x += dx;
   y += dy;
 }
-setInterval(draw, 10);
+setInterval(draw, 30);
 
 // ctx.beginPath();
 // ctx.rect(20, 40, 50, 50);

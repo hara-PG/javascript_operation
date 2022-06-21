@@ -29,7 +29,6 @@ function drawPaddle() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
-  drawPaddle();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
@@ -43,7 +42,7 @@ function draw() {
   x += dx;
   y += dy;
 }
-setInterval(draw, 10);
+setInterval(draw, 30);
 
 // ctx.beginPath();
 // ctx.rect(20, 40, 50, 50);
