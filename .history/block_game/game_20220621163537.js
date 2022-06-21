@@ -34,8 +34,10 @@ function drawBall() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBall();
+
   x += dx;
   y += dy;
 }
-setInterval(draw, 10);
+setInterval(draw, 100);
+
+draw();

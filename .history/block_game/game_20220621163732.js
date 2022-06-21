@@ -38,4 +38,4 @@ function draw() {
   x += dx;
   y += dy;
 }
-setInterval(draw, 10);
+setInterval(draw, 100;

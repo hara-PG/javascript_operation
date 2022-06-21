@@ -19,7 +19,7 @@ const ctx = canvas.getContext("2d");
 // ctx.fill();
 // ctx.closePath();
 
-let x = canvas.width / 2;
+let x = canvas.width / 3;
 let y = canvas.height - 30;
 let dx = 2;
 let dy = -2;
