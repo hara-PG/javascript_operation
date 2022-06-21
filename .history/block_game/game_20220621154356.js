@@ -8,13 +8,7 @@ ctx.fill();
 ctx.closePath();
 
 ctx.beginPath();
-ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
+ctx.arc(240, 60, 20, 0, Math.PI * 2, false);
 ctx.fillStyle = "green";
-ctx.fill();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.rect(160, 10, 100, 40);
-ctx.fillStyle = "rgba(0,0,255,0.5)";
 ctx.fill();
 ctx.closePath();

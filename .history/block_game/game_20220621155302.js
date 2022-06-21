@@ -14,7 +14,7 @@ ctx.fill();
 ctx.closePath();
 
 ctx.beginPath();
-ctx.rect(160, 10, 100, 40);
-ctx.fillStyle = "rgba(0,0,255,0.5)";
+ctx.rect(160, 10, 10, 100);
+ctx.fillStyle = "blue";
 ctx.fill();
 ctx.closePath();
