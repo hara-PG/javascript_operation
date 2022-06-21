@@ -12,21 +12,20 @@ let ballRadius = 10; // ボールの大きさ
 let color = "#0095DD"; // ボールとパドルの色
 
 function drawBall() {
-  // drawBall => ボールを描く
   ctx.beginPath(); //　キャンバス 2D API のメソッドで、サブパスのリストを空にすることにより新しいパスを開始します。新しいパスを作成したい場合は、このメソッドを呼び出してください。
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2); // サブパスに円弧を加えます。.arc(x, y, radius, startAngle, endAngle [, counterclockwise]);
+  ctx.arc(x, y, ballRadius, 0, Math.PI * 2); // サブパスに円弧を加えます。.arc(x, y, radius, startAngle);
   ctx.fillStyle = color;
-  ctx.fill(); // .fill()は現在のパスまたは指定されたパスを現在のパスで埋めます。メソッドを使用して長方形を塗りつぶしfill()ます。
-  ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
+  ctx.fill();
+  ctx.closePath();
 }
 
 function drawPaddle() {
-  // drawPaddle => パドルを描く
+  // draw => ボールを描く
   ctx.beginPath(); //　キャンバス 2D API のメソッドで、サブパスのリストを空にすることにより新しいパスを開始します。新しいパスを作成したい場合は、このメソッドを呼び出してください。
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = color; // .fillStyleは図形の内側を塗りつぶすために使用する色、グラデーション、またはパターンを指定します。
-  ctx.fill(); // .fill()は現在のパスまたは指定されたパスを現在のパスで埋めます。メソッドを使用して長方形を塗りつぶしfill()ます。
-  ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.closePath();
 }
 
 function draw() {
