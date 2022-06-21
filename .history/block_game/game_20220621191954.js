@@ -48,26 +48,6 @@ function draw() {
   x += dx; // ボールが壁に当たるとX軸動作させるため！
   y += dy; // ボールが壁に当たるとY軸動作させるため！
 }
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-function keyDownHandler(e) {
-  if (e.key == "Right" || e.key == ArrowRight) {
-    rightPressed = true;
-  } else if (e.key == "Left" || e.key == ArrowLeft) {
-    leftPressed = true;
-  }
-}
-
-function keyUpHandler(e) {
-  if (e.key == "Right" || e.key == ArrowRight) {
-    rightPressed = false;
-  } else if (e.key == "Left" || e.key == ArrowLeft) {
-    leftPressed = false;
-  }
-}
-
 setInterval(draw, 10); // setInterval(function, delay) functionは関数名(関数を出力)、delayは1000ms
 
 // ctx.beginPath();

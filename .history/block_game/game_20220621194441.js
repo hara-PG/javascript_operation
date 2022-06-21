@@ -60,14 +60,6 @@ function keyDownHandler(e) {
   }
 }
 
-function keyUpHandler(e) {
-  if (e.key == "Right" || e.key == ArrowRight) {
-    rightPressed = false;
-  } else if (e.key == "Left" || e.key == ArrowLeft) {
-    leftPressed = false;
-  }
-}
-
 setInterval(draw, 10); // setInterval(function, delay) functionは関数名(関数を出力)、delayは1000ms
 
 // ctx.beginPath();
