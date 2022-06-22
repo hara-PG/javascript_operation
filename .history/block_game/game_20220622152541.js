@@ -62,11 +62,6 @@ function draw() {
   }
   if (y + dy < ballRadius) {
     dy = -dy; // ボールが壁に当たると(Y軸)反転させるため！ Y軸を＋値・ー値に反転させている
-  } else if (y + dy > canvas.height - ballRadius) {
-    // 下の面に当たると下記の処理が発生!
-    alert("Game Over!");
-    location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
-    clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
   }
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {

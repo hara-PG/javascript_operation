@@ -65,7 +65,7 @@ function draw() {
   } else if (y + dy > canvas.height - ballRadius) {
     // 下の面に当たると下記の処理が発生!
     alert("Game Over!");
-    location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
+    location.reload();
     clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
   }
 
