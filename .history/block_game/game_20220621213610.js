@@ -13,22 +13,22 @@ let color = "#0095DD"; // ボールとパドルの色
 let rightPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 let leftPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 
-document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
-document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = true; // キーが押された時trueへ
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = true; // // キーが押された時trueへ
+  if (e.key == "Right" || e.key == ArrowRight) {
+    rightPressed = true;
+  } else if (e.key == "Left" || e.key == ArrowLeft) {
+    leftPressed = true;
   }
 }
 
 function keyUpHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = false; // キーが押された時falseへ
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = false; // キーが押された時falseへ
+  if (e.key == "Right" || e.key == ArrowRight) {
+    rightPressed = false;
+  } else if (e.key == "Left" || e.key == ArrowLeft) {
+    leftPressed = false;
   }
 }
 
@@ -64,14 +64,14 @@ function draw() {
     dy = -dy; // ボールが壁に当たると(Y軸)反転させるため！ Y軸を＋値・ー値に反転させている
   }
 
+  x += dx; // ボールが壁に当たるとX軸動作させるため！
+  y += dy; // ボールが壁に当たるとY軸動作させるため！
+
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
   } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
-
-  x += dx; // ボールが壁に当たるとX軸動作させるため！
-  y += dy; // ボールが壁に当たるとY軸動作させるため！
 }
 
 setInterval(draw, 10); // setInterval(function, delay) functionは関数名(関数を出力)、delayは1000ms

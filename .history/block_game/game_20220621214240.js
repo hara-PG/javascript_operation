@@ -10,25 +10,25 @@ let dx = 2; // ボールの角度(X軸) +の場合はcanvas.width　/　2より�
 let dy = -2; // ボールの角度(Y軸) +の場合はcanvas.height / 2より下に射出、 -の場合はcanvas.height / 2より上に射出。
 let ballRadius = 10; // ボールの大きさ
 let color = "#0095DD"; // ボールとパドルの色
-let rightPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
-let leftPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
+var rightPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
+var leftPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 
-document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
-document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = true; // キーが押された時trueへ
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = true; // // キーが押された時trueへ
+  if (e.key == "Right" || e.key == ArrowRight) {
+    rightPressed = true;
+  } else if (e.key == "Left" || e.key == ArrowLeft) {
+    leftPressed = true;
   }
 }
 
 function keyUpHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = false; // キーが押された時falseへ
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = false; // キーが押された時falseへ
+  if (e.key == "Right" || e.key == ArrowRight) {
+    rightPressed = false;
+  } else if (e.key == "Left" || e.key == ArrowLeft) {
+    leftPressed = false;
   }
 }
 

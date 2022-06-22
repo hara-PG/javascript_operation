@@ -18,17 +18,17 @@ document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが
 
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = true; // キーが押された時trueへ
+    rightPressed = true;
   } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = true; // // キーが押された時trueへ
+    leftPressed = true;
   }
 }
 
 function keyUpHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = false; // キーが押された時falseへ
+    rightPressed = false;
   } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = false; // キーが押された時falseへ
+    leftPressed = false;
   }
 }
 

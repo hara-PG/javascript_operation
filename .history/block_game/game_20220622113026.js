@@ -13,22 +13,22 @@ let color = "#0095DD"; // ボールとパドルの色
 let rightPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 let leftPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 
-document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
-document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
+document.addEventListener("keydown", keyDownHandler, false); //
+document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = true; // キーが押された時trueへ
+    rightPressed = true;
   } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = true; // // キーが押された時trueへ
+    leftPressed = true;
   }
 }
 
 function keyUpHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
-    rightPressed = false; // キーが押された時falseへ
+    rightPressed = false;
   } else if (e.key == "Left" || e.key == "ArrowLeft") {
-    leftPressed = false; // キーが押された時falseへ
+    leftPressed = false;
   }
 }
 
