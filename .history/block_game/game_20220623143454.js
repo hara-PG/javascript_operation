@@ -64,8 +64,7 @@ function draw() {
     dy = -dy; // ボールが壁に当たると(Y軸)反転させるため！ Y軸を＋値・ー値に反転させている
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
-      // ボールがパドルに当たると反転する。
-      dy = -dy;
+      dy -= -dy;
     } else {
       alert("Game Over!");
       location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
