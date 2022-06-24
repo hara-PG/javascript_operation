@@ -59,10 +59,10 @@ function drawPaddle() {
   ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
 }
 
-let bricks = [];
-for (let c = 0; c < brickColumnCount; c++) {
+var bricks = [];
+for (var c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
-  for (let r = 0; r < brickRowCount; r++) {
+  for (var r = 0; r < brickRowCount; r++) {
     bricks[c][r] = { x: 0, y: 0 };
   }
 }

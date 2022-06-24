@@ -59,21 +59,13 @@ function drawPaddle() {
   ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
 }
 
-let bricks = [];
-for (let c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (let r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0 };
-  }
-}
-
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
       let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-      bricks[c][r].x = brickX;
-      bricks[c][r].y = brickY;
+      bricks[c][r].x = 0;
+      bricks[c][r].y = 0;
       ctx.beginPath();
       ctx.rect(brickX, brickY, brickWidth, brickHeight);
       ctx.fillStyle = color;
@@ -89,7 +81,6 @@ function draw() {
   clearRect(x, y, width, height); */
   drawBall(); // drawBall関数を出力
   drawPaddle(); // drawPaddle関数を出力
-  drawBricks();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている

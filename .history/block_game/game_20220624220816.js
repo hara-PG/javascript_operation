@@ -22,6 +22,14 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 
+var bricks = [];
+for (var c = 0; c < brickColumnCount; c++) {
+  bricks[c] = [];
+  for (var r = 0; r < brickRowCount; r++) {
+    bricks[c][r] = { x: 0, y: 0 };
+  }
+}
+
 document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
 document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
 
@@ -57,14 +65,6 @@ function drawPaddle() {
   ctx.fillStyle = color; // .fillStyleは図形の内側を塗りつぶすために使用する色、グラデーション、またはパターンを指定します。
   ctx.fill(); // .fill()は現在のパスまたは指定されたパスを現在のパスで埋めます。メソッドを使用して長方形を塗りつぶしfill()ます。
   ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
-}
-
-let bricks = [];
-for (let c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (let r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0 };
-  }
 }
 
 function drawBricks() {

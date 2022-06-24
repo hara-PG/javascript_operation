@@ -22,6 +22,22 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 
+function drawBricks() {
+  for (let c = 0; c < brickColumnCount; c++) {
+    for (let r = 0; r < brickRowCount; r++) {
+      let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+      let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+      bricks[c][r].x = 0;
+      bricks[c][r].y = 0;
+      ctx.beginPath();
+      ctx.rect(brickX, brickY, brickWidth, brickHeight);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+}
+
 document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
 document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
 
@@ -59,37 +75,12 @@ function drawPaddle() {
   ctx.closePath(); // 図形の最初と最後の点を自動的に接続する closePath() メソッドで、底辺を作成します。
 }
 
-let bricks = [];
-for (let c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (let r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0 };
-  }
-}
-
-function drawBricks() {
-  for (let c = 0; c < brickColumnCount; c++) {
-    for (let r = 0; r < brickRowCount; r++) {
-      let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-      let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-      bricks[c][r].x = brickX;
-      bricks[c][r].y = brickY;
-      ctx.beginPath();
-      ctx.rect(brickX, brickY, brickWidth, brickHeight);
-      ctx.fillStyle = color;
-      ctx.fill();
-      ctx.closePath();
-    }
-  }
-}
-
 function draw() {
   // draw => 描く
   ctx.clearRect(0, 0, canvas.width, canvas.height); /* clearRect() メソッドは、矩形領域のピクセルを透明な黒 (rgba(0,0,0,0)) に設定します。
   clearRect(x, y, width, height); */
   drawBall(); // drawBall関数を出力
   drawPaddle(); // drawPaddle関数を出力
-  drawBricks();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている
