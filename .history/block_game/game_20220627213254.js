@@ -102,7 +102,6 @@ function drawBricks() {
 
 function draw() {
   // draw => 描く
-  collisionDetection();
   ctx.clearRect(0, 0, canvas.width, canvas.height); /* clearRect() メソッドは、矩形領域のピクセルを透明な黒 (rgba(0,0,0,0)) に設定します。
   clearRect(x, y, width, height); */
   drawBall(); // drawBall関数を出力

@@ -45,11 +45,8 @@ function collisionDetection() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       let b = bricks[c][r];
-      if (b.status == 1) {
-        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
-          dy = -dy;
-          b.status = 0;
-        }
+      if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+        dy = -dy;
       }
     }
   }
@@ -65,7 +62,6 @@ function drawBall() {
 }
 
 function drawPaddle() {
-  collisionDetection();
   // drawPaddle => パドルを描く
   ctx.beginPath(); //　キャンバス 2D API のメソッドで、サブパスのリストを空にすることにより新しいパスを開始します。新しいパスを作成したい場合は、このメソッドを呼び出してください。
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -102,7 +98,6 @@ function drawBricks() {
 
 function draw() {
   // draw => 描く
-  collisionDetection();
   ctx.clearRect(0, 0, canvas.width, canvas.height); /* clearRect() メソッドは、矩形領域のピクセルを透明な黒 (rgba(0,0,0,0)) に設定します。
   clearRect(x, y, width, height); */
   drawBall(); // drawBall関数を出力
