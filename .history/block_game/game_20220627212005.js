@@ -14,13 +14,13 @@ let rightPressed = false; // 押されているボタンをブーリアン値と
 let leftPressed = false; // 押されているボタンをブーリアン値として定義、初期化しています。
 
 // ブロック変数
-let brickRowCount = 3; // プロックの横列
-let brickColumnCount = 5; // ブロックの縦列
-let brickWidth = 75; // ブロックの横幅
-let brickHeight = 20; // ブロックの縦幅
-let brickPadding = 10; // ブロックの四方の余白
-let brickOffsetTop = 30; // ブロックと上面の幅
-let brickOffsetLeft = 30; // ブロックと左面の幅
+let brickRowCount = 4; // プロックの横列
+let brickColumnCount = 5;
+let brickWidth = 75;
+let brickHeight = 20;
+let brickPadding = 10;
+let brickOffsetTop = 30;
+let brickOffsetLeft = 30;
 
 document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
 document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
