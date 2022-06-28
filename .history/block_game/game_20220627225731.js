@@ -22,9 +22,6 @@ let brickPadding = 10; // ブロックの四方の余白
 let brickOffsetTop = 30; // ブロックと上面の幅
 let brickOffsetLeft = 30; // ブロックと左面の幅
 
-// スコア
-let score = 0;
-
 document.addEventListener("keydown", keyDownHandler, false); // keydownイベントが発火したとき (どれかが押されたとき) 、keyDownHandler()関数が実行
 document.addEventListener("keyup", keyUpHandler, false); // keyupイベントが発火した時　(そのキーが押されなくなったき) 、keyUpHandler()関数が実行
 
@@ -52,17 +49,10 @@ function collisionDetection() {
         if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
           dy = -dy;
           b.status = 0;
-          score++;
         }
       }
     }
   }
-}
-
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = color;
-  ctx.fillText("Score: " + score, 8, 20);
 }
 
 function drawBall() {
@@ -118,7 +108,6 @@ function draw() {
   drawBall(); // drawBall関数を出力
   drawPaddle(); // drawPaddle関数を出力
   drawBricks(); // drawBricks関数を出力
-  drawScore();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている

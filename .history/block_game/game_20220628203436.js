@@ -118,7 +118,6 @@ function draw() {
   drawBall(); // drawBall関数を出力
   drawPaddle(); // drawPaddle関数を出力
   drawBricks(); // drawBricks関数を出力
-  drawScore();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている
