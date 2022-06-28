@@ -2,7 +2,7 @@ const canvas = document.getElementById("myCanvas"); // DOMでidの要素を変�
 const ctx = canvas.getContext("2d"); // canvasを2D化
 
 let paddleHeight = 10; // パドルの高さ
-let paddleWidth = 90; // パドルの長さ
+let paddleWidth = 75; // パドルの長さ
 let paddleX = (canvas.width - paddleWidth) / 2; // パドルの初期位置
 let x = canvas.width / 2; // ボールの初期位置(横位置)　canvas.widthは480px / 2
 let y = canvas.height - 30; // ボールの初期位置(高さ位置) canvas.height320px - 30

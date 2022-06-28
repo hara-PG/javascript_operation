@@ -54,6 +54,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
+            settimeout(1000);
             alert("You Win!");
             document.location.reload();
           }
