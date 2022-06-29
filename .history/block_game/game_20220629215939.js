@@ -141,7 +141,6 @@ function draw() {
   drawPaddle(); // drawPaddle関数を出力
   drawBricks(); // drawBricks関数を出力
   drawScore();
-  drawLives();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている
@@ -153,20 +152,9 @@ function draw() {
       // ボールがパドルに当たると反転する。
       dy = -dy;
     } else {
-      lives--;
-      if (!lives) {
-        alert("GAME OVER");
-        document.location.reload();
-        clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
-      } else {
-        x = canvas.width / 2;
-        y = canvas.height - 30;
-        dx = 2;
-        dy = -2;
-        paddleX = (canvas.width - paddleWidth) / 2;
-      }
-      // alert("Game Over!");
-      // location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
+      alert("Game Over!");
+      location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
+      clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
     }
   }
 

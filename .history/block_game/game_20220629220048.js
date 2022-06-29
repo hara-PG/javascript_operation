@@ -157,7 +157,6 @@ function draw() {
       if (!lives) {
         alert("GAME OVER");
         document.location.reload();
-        clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
@@ -167,6 +166,7 @@ function draw() {
       }
       // alert("Game Over!");
       // location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
+      clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
     }
   }
 

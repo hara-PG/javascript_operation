@@ -141,7 +141,6 @@ function draw() {
   drawPaddle(); // drawPaddle関数を出力
   drawBricks(); // drawBricks関数を出力
   drawScore();
-  drawLives();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx; // ボールが壁に当たると(X軸)反転させるため！ X軸を＋値・ー値に反転させている
@@ -157,7 +156,6 @@ function draw() {
       if (!lives) {
         alert("GAME OVER");
         document.location.reload();
-        clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
@@ -167,6 +165,7 @@ function draw() {
       }
       // alert("Game Over!");
       // location.reload(); // 再読み込みボタンのように現在の URL を再読み込み
+      clearInterval(interval); // clearInterval(intervalID) タイマーの繰り返し動作を取り消す
     }
   }
 
